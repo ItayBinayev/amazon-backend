@@ -10,9 +10,7 @@ orderRouter.get(
     "/:id",
     isAuth,
     expressAsyncHandler(async (req, res) => {  
-        console.log("in endpoint orderID")
         const { id } = req.params;
-        console.log(id)
         const order = await Order.findById(id);
         if(order)
         {
